@@ -122,3 +122,8 @@ def dist_to_goal(index):
 # print out the indices of the shortest path
 
 # print out the total minimal cost of the path
+finalPath = list(map(str, finalPath))
+sys.stdout = open("C:\\Output.txt", "w")
+print("\n".join(finalPath))
+print("Minimal-Cost Path Costs: %d" % finalCost)
+sys.stdout.close()
