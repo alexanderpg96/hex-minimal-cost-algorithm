@@ -1,9 +1,8 @@
 # Put the index numbers into an array
-
 # Put the cost numbers into an array
 indicies=[]
-values= []
-readfile = open("test.txt", "r")
+hexGrid= []
+readfile = open("input.txt", "r")
 value_delimit = ' '
 column_delimit = '\n'
 
@@ -13,9 +12,8 @@ for line in readfile.readlines():
          for column in columns:
              if not column: continue 
              indicies.append(column.split(value_delimit)[0])
-             values.append(column.split(value_delimit)[1])
+             hexGrid.append(column.split(value_delimit)[1])
 readfile.close()
-
 
 # get neighbors for index; returns neighbors and actions
 def isRightWall(index):
