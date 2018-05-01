@@ -1,6 +1,28 @@
 # Put the index numbers into an array
 
 # Put the cost numbers into an array
+indicies=[]
+values= []
+readfile = open("test.txt", "r")
+value_delimit = ' '
+column_delimit = '\n'
+
+for line in readfile.readlines():
+         line = line.rstrip('\n')
+
+
+         columns = line.split(column_delimit)
+
+
+         for column in columns:
+             if not column: continue 
+             indicies.append(column.split(value_delimit)[0])
+             values.append(column.split(value_delimit)[1])
+
+print(indicies)
+print(values)
+readfile.close()
+
 
 # get neighbors for index; returns neighbors and actions
 def isRightWall(index):
