@@ -127,7 +127,7 @@ grid = {}  # Hex grid
 shortest_distance = {}  # Saves shortest cost path to each hex panel
 predecessor = {}  # Keeps track of path
 unseenPanels = {}  # Copy of traversable panels
-path = {}
+path = []
 infinity = 9999999  # Used to indicate panel not traversed thru
 
 ''' Places all the values in the text file in a dictionary '''
@@ -168,6 +168,14 @@ while unseenPanels:
                 predecessor[childNode] = minNode  # Store panel it came from for backtrack
     unseenPanels.pop(minNode)  # Pop unseen to indicate has been seen
 
-print(shortest_distance)
+#print(shortest_distance)
 
+final = end
+while final != start:
+    path.insert(0, final)
+    final = predecessor[final]
+
+path.insert(0,start)
+
+print(path)
 # print out the total minimal cost of the path
