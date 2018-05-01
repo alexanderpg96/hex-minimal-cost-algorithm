@@ -9,18 +9,11 @@ column_delimit = '\n'
 
 for line in readfile.readlines():
          line = line.rstrip('\n')
-
-
          columns = line.split(column_delimit)
-
-
          for column in columns:
              if not column: continue 
              indicies.append(column.split(value_delimit)[0])
              values.append(column.split(value_delimit)[1])
-
-print(indicies)
-print(values)
 readfile.close()
 
 
