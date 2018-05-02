@@ -69,8 +69,11 @@ infinity = 9999999  # Used to indicate panel not traversed thru
 ''' Places all the values in the text file in a dictionary '''
 with open("input.txt") as file:
     for lines in file:
-        idx, val = lines.partition(" ")[::2]
-        grid[idx] = int(val)
+        if not lines.strip():
+            continue
+        else:
+            idx, val = lines.partition(" ")[::2]
+            grid[idx] = int(val)
 file.close()
 
 ''' Copy traversable panels '''
